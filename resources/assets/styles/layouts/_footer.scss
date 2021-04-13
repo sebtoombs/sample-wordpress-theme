@@ -1,0 +1,31 @@
+.site-footer .widget-title {
+  @apply font-bold;
+}
+
+.site-footer .menu {
+.menu-item {
+  @apply my-1;
+  a {
+    @apply underline py-1;
+  }
+}
+}
+
+.site-footer .widget-area {
+   &>.widget {
+     @apply mb-6;
+
+     &:last-child {
+       @apply mb-0;
+     }
+   }
+}
+
+.site-footer .textwidget {
+ &>* {
+   @apply mb-2;
+   &:last-child {
+     @apply mb-0;
+   }
+ }
+}

@@ -1,0 +1,75 @@
+.copy {
+  @apply text-lg leading-relaxed;
+  
+  a[href]:not(.btn):not(.button):not(.wp-block-button__link) {
+    @apply underline;
+  }
+
+  h1:not([class$='-font-size']):not([class*='-font-size']) {
+    @apply text-4xl my-6;
+  }
+
+  h2:not([class$='-font-size']):not([class*='-font-size']) {
+    @apply text-3xl my-5;
+  }
+
+  h3:not([class$='-font-size']):not([class*='-font-size']) {
+    @apply text-2xl font-bold my-4;
+  }
+
+  h4:not([class$='-font-size']):not([class*='-font-size']) {
+    @apply font-bold text-xl my-3;
+  }
+
+  p:not([class$='-font-size']):not([class*='-font-size']) {
+    @apply my-3;
+  }
+
+  &>*:first-child {
+    @apply mt-0;
+  }
+
+  &>*:last-child {
+    @apply mb-0;
+  }
+
+  &.copy-standout {
+    @apply text-xl leading-loose;
+  }
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  ol {
+    @apply list-inside list-decimal;
+  }
+
+  blockquote {
+    @apply px-4;
+  }
+
+  &.copy-sm {
+    @apply text-base;
+
+    p {
+      @apply my-2;
+    }
+
+    h1 {
+      @apply text-3xl my-5;
+    }
+
+    h2 {
+      @apply text-2xl my-4;
+    }
+
+    h3 {
+      @apply text-xl font-bold my-3;
+    }
+
+    h4 {
+      @apply font-bold text-lg my-2;
+    }
+  }
+}

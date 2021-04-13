@@ -1,0 +1,12 @@
+{
+  "entry": {
+    "main": ["./scripts/main.js", "./styles/main.scss"],
+    "editor": ["./styles/editor.scss", "./scripts/editor.js"],
+    "fonts": ["./styles/fonts.scss"],
+    "customizer": ["./scripts/customizer.js"]
+  },
+  "publicPath": "/wp-content/themes/sample-wordpress",
+  "devUrl": "https://sample-wordpress.kingsdesign.info",
+  "proxyUrl": "localhost:3000",
+  "watch": ["app/**/*.php", "config/**/*.php", "resources/views/**/*.php"]
+}

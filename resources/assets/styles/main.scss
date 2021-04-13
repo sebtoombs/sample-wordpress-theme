@@ -1,0 +1,141 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind base;
+
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+/**
+ * This injects any component classes registered by Tailwind plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/** Import theme styles */
+@import "common/global";
+@import "components/copy";
+@import "components/forms";
+@import "components/wp-classes";
+@import "blocks/blocks";
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
+@import "layouts/mobile-navigation";
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+@layer utilities {
+  @responsive {
+    .aspect-ratio {
+      @apply relative;
+
+      &:before {
+        @apply h-0 block;
+        content: "";
+        padding-bottom: var(--aspect-ratio);
+      }
+
+      &>* {
+        @apply overflow-hidden absolute flex items-center w-full h-full;
+        inset: 0px;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      &>picture>img {
+        @apply w-full h-full;
+      }
+    }
+
+    .btn {
+      @apply px-3 py-1 inline-flex items-center justify-center border-solid border transition duration-200 cursor-pointer;
+
+      &:focus {
+        @apply outline-none ring;
+      }
+
+      &.btn-link {
+        @apply border-transparent bg-transparent px-0 py-0 underline;
+      }
+    }
+
+    .btn-lg {
+      @apply px-5 py-2 text-lg;
+    }
+
+    // EG
+    .btn-orange {
+      @apply bg-orange-500 text-white border-orange-500;
+
+      &:hover {
+        @apply bg-orange-600 border-orange-600;
+      }
+
+      &.btn-outline {
+        @apply bg-transparent border-orange-500 text-orange-500;
+
+        &:hover {
+          @apply bg-orange-600 bg-opacity-25 border-orange-600;
+        }
+      }
+    }
+
+    .btn-orange-gradient {
+      @apply text-white;
+      background: linear-gradient(90deg, #F15A29 0%, #EE7645 100%);
+    }
+
+    
+  }
+}
+
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+ // For alpine
+  [x-cloak] {
+    display: none !important;
+  }

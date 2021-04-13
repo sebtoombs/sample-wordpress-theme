@@ -1,0 +1,38 @@
+.block-background {
+  .block-background--wrapper {
+    --block-background-y: 5%;
+    // @screen xl {
+    //   --block-background-y: 2%;
+    // }
+    padding-top: var(--block-background-y);
+    padding-bottom: var(--block-background-y);
+
+    
+    
+
+    .block-background--bg {
+      // width: 200%;
+      // top:50%;
+      // left: 50%;
+
+      @apply bg-teal-900 absolute;
+      left: 0;
+      right: 0;
+      top: 5%;
+      bottom: 5%;
+      transform:rotate(-1deg);
+
+      &:before, &:after {
+        @apply block absolute top-0 h-full bg-teal-900;
+        content: "";
+        width: 10%;
+      }
+      &:before {
+        right: 100%;
+      }
+      &:after {
+        left: 100%;
+      }
+    }
+  }
+}

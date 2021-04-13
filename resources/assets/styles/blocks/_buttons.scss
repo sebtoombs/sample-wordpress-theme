@@ -1,0 +1,124 @@
+.wp-block-button {
+
+  .wp-block-button__link {
+    @apply px-4 py-1 inline-flex items-center justify-center border-solid border transition duration-200 cursor-pointer;
+
+    &>* {
+      @apply mx-1;
+    }
+
+    &:focus {
+      @apply outline-none ring;
+    }
+
+    &.has-teal-500-background-color {
+      @apply bg-teal-500 text-white border-teal-500;
+
+      &:hover {
+        @apply bg-teal-600;
+      }
+    }
+
+    &.has-orange-500-background-color {
+      @apply bg-orange-500 text-white border-orange-500;
+
+      &:hover {
+        @apply bg-orange-600;
+      }
+    }
+
+    &.has-white-background-color {
+      @apply bg-white text-black border-white;
+
+      &:hover {
+        @apply bg-gray-50;
+      }
+    }
+
+    &.has-black-background-color {
+      @apply bg-black text-white border-black;
+
+      &:hover {
+        @apply bg-gray-900;
+      }
+    }
+
+    &.has-orange-gradient-background {
+      border: 1px solid transparent;
+      background: linear-gradient(90deg, #F15A29 0%, #EE7645 100%);
+      &:hover {
+        background: linear-gradient(90deg, #EE7645 0%, #F15A29 100%);
+        border-radius: 999px;
+      }
+    }
+  }
+
+  &.is-style-fill {
+    .wp-block-button__link {}
+  }
+
+  &.is-style-outline {
+    .wp-block-button__link {
+      &.has-teal-500-background-color {
+        @apply bg-transparent text-teal-500;
+
+        &:hover {
+          @apply bg-teal-50;
+        }
+      }
+
+      &.has-orange-500-background-color {
+        @apply bg-transparent text-orange-500;
+
+        &:hover {
+          @apply bg-orange-50;
+        }
+      }
+
+      &.has-white-background-color {
+        @apply bg-transparent text-white;
+
+        &:hover {
+          @apply bg-gray-50 bg-opacity-25;
+        }
+      }
+
+      &.has-black-background-color {
+        @apply bg-transparent text-black;
+
+        &:hover {
+          @apply bg-gray-900 bg-opacity-25;
+        }
+      }
+
+      &.has-orange-gradient-background {
+        @apply  text-orange-500 relative;
+        background: #fff;
+        background-clip: padding-box;
+        /* !importanté */
+        border: solid 1px transparent;
+        /* !importanté */
+
+        
+        &:before {
+          content: '';
+          position: absolute;
+          top: 1px;
+          right: 1px;
+          bottom: 1px;
+          left: 1px;
+          z-index: -1;
+          margin: -3px;
+          /* !importanté */
+          border-radius: inherit;
+          /* !importanté */
+          background: linear-gradient(90deg, #F15A29 0%, #EE7645 100%);
+        }
+
+        &:hover {
+          @apply bg-orange-50;
+        }
+      }
+    }
+  }
+}

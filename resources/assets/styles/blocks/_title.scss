@@ -1,0 +1,6 @@
+.block-title, .copy h1.block-title {
+  @apply text-3xl leading-none;
+  @screen lg {
+    @apply text-5xl;
+  }
+}

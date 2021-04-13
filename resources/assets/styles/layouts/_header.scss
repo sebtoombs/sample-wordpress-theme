@@ -1,0 +1,40 @@
+
+//TODO 
+// https://css-tricks.com/dropdown-menus-with-more-forgiving-mouse-movement-paths/
+
+.site-header {
+
+
+  .nav {
+    @apply flex items-center;
+
+    // Top level menu items
+    &>.menu-item {
+      @apply mx-1 relative;
+      &>.nav-link:not(.btn) {
+    @apply py-5 block px-3 transition duration-200;
+    &:hover {
+      @apply bg-teal-700;
+    }
+      }
+    }
+
+    .dropdown-menu {
+      @apply absolute left-0 bg-teal-900 w-96 grid grid-cols-2 gap-1 shadow-lg;
+      top: 100%;
+      z-index: 100;
+
+      .dropdown-link {
+        @apply flex px-2 py-3 font-semibold items-center transition duration-200 text-sm h-full;
+        min-height: 3.5rem;
+        .icon-wrap {
+          @apply mr-2 w-8 h-8 ;
+        }
+        &:hover {
+          @apply bg-teal-700;
+        }
+      }
+    }
+  }
+
+}

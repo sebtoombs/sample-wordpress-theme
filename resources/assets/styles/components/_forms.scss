@@ -1,0 +1,105 @@
+/** Search form */
+.search-form {
+  @apply flex items-center;
+}
+
+.search-form label {
+  @apply mb-4;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-900 border border-gray-500 rounded;
+}
+
+.search-form .search-submit {
+  @apply inline-block align-middle text-center select-none border font-normal whitespace-nowrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-gray-500;
+
+  &:hover {
+    @apply bg-gray-300;
+  }
+}
+
+/** form inputs */
+input[type="text"],
+input[type="email"],
+input[type="phone"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea,
+.nf-form-cont .nf-form-content input:not([type=button]),
+.nf-form-cont .nf-form-content textarea,
+.nf-form-cont .nf-form-content .list-select-wrap .nf-field-element>div {
+  @apply bg-white border border-solid border-orange-500 rounded-md h-auto w-full outline-none appearance-none text-base px-4 py-2 text-black;
+  &:focus {
+    @apply outline-none ring;
+  }
+}
+
+/** ninja forms specific */
+.nf-form-cont {
+
+  // Buttons
+  .nf-form-content button,
+  .nf-form-content input[type=button],
+  .nf-form-content input[type=submit] {
+    @apply px-4 py-2 inline-flex text-white items-center justify-center border-solid border transition duration-200 cursor-pointer rounded-full text-xl font-normal;
+    border: 1px solid transparent;
+    background: linear-gradient(90deg, #F15A29 0%, #EE7645 100%);
+
+    &:hover {
+      background: linear-gradient(90deg, #EE7645 0%, #F15A29 100%);
+      border-radius: 999px;
+      @apply text-white;
+    }
+
+    &:focus {
+      @apply outline-none ring;
+    }
+  }
+
+  .nf-field-container.submit-container .nf-field-element  {
+    @apply flex justify-center;
+  }
+
+  // Select
+
+  .nf-form-content .listselect-wrap .nf-field-element div,
+  .nf-form-content .ninja-forms-field {
+    @apply px-4 py-2 text-base;
+  }
+
+  .nf-form-content select.ninja-forms-field {
+    @apply text-black;
+  }
+
+  
+  .nf-form-content .list-select-wrap>div select {
+    @apply bg-transparent border-transparent;
+  }
+
+  .nf-form-content .field-wrap.listselect-wrap .nf-field-element div {
+    @apply h-full;
+  }
+
+  .nf-form-content .list-select-wrap>div div:after {
+    @apply h-full leading-none flex items-center;
+  }
+
+  .nf-form-content .listselect-wrap .nf-field-element div,
+  .nf-form-content input.ninja-forms-field,
+  .nf-form-content select.ninja-forms-field:not([multiple]) {
+    @apply h-auto;
+  }
+  
+  
+  // Input error thingy
+  .nf-error.field-wrap .nf-field-element:after {
+    @apply flex justify-center items-center leading-none w-6 h-6 text-base rounded-full;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.5rem;
+  }
+}

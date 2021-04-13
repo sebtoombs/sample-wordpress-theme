@@ -1,0 +1,44 @@
+.nav-mobile-primary .nav {
+  .menu-item {
+    a {
+      @apply block pl-4 pr-4 text-white flex items-center;
+      .title-wrap {
+        @apply p-2;
+      }
+      .icon-wrap {
+        @apply  block w-6 h-6;
+      }
+      .button-wrap {
+        @apply ml-auto flex items-center;
+        .dropdown-toggle {
+          @apply p-2;
+        }
+      }
+    }
+
+
+
+  }
+  &>.menu-item.current-menu-item>a {
+    @apply bg-teal-600;
+  }
+  .dropdown-menu {
+    @apply bg-teal-800;
+    .menu-item a {
+      @apply pl-8;
+    }
+  }
+}
+
+.nav-mobile-secondary .nav {
+  @apply bg-teal-800 pl-6 pt-4 pb-2 pr-4 flex items-center flex-wrap;
+  .menu-item {
+    @apply mr-4 mb-2;
+    a{ 
+      @apply text-white;
+    }
+    &:last-child {
+      @apply mr-0;
+    }
+  }
+}

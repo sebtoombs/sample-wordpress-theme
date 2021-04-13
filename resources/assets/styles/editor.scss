@@ -1,0 +1,24 @@
+/* Main column width */
+.wp-block {
+  max-width: 1080px;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 1280px;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+  max-width: none;
+}
+
+@import "blocks/blocks";
+
+@tailwind utilities;
+
+
+// Outline buttons dont display nice in editor
+.wp-block-button.is-style-outline .wp-block-button__link.has-white-background-color {
+  @apply text-black;
+}

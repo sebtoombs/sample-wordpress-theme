@@ -1,0 +1,23 @@
+.wp-block-sample-wordpress-price .price__box {
+  @apply relative my-4;
+  height: 60px;
+
+  .price__item {
+    @apply -translate-x-1/2 absolute top-0 left-1/2 m-auto transition duration-200 transform;
+  }
+
+  .price__symbol {
+    @apply absolute text-sm text-gray-500 font-bold top-0;
+    left: -10px;
+  }
+
+  .price__price {
+    @apply inline-block text-6xl leading-none;
+  }
+
+  .price__period {
+    @apply absolute text-sm font-bold text-gray-500 translate-x-full transform whitespace-nowrap;
+    right: -5px;
+    bottom: 4px;
+  }
+}
